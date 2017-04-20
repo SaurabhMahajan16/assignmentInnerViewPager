@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:minHeight="?attr/actionBarSize"
+    android:orientation="horizontal"
+    android:background="@color/colorPrimaryDark">
+    <ImageButton
+        android:id="@+id/ib_back"
+
+        android:background="@color/colorPrimaryDark"
+       style="@style/toolbarLayout"
+        android:src="@drawable/btn_back_normal"
+        />
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/tv_title"
+        style="@style/toolbarLayout"
+        android:textColor="@color/textColorWhite"
+        />
+
+</LinearLayout>

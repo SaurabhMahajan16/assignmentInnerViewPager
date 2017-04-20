@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fillparent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/llVpFragment"
+        style="@style/fillparent"
+        android:layout_margin="25dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:orientation="horizontal"
+
+            >
+
+            <Button
+                android:id="@+id/btn_upcoming"
+                style="@style/fragmentButtonLayout"
+                android:layout_marginEnd="0.2dp"
+                android:text="@string/upcoming" />
+
+            <Button
+                android:id="@+id/btn_past"
+                style="@style/fragmentButtonLayout"
+                android:text="@string/past" />
+
+
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_swipe"
+            style="@style/fillparent"
+            android:layout_below="@id/ll_button"
+            android:layout_marginTop="15dp">
+
+
+        </android.support.v4.view.ViewPager>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

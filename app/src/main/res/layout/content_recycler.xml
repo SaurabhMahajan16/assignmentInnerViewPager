@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:background="@color/gridBg"
+    >
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/toolbarLayout"
+        android:layout_width="match_parent"
+        android:background="@color/textColorWhite"
+        android:gravity="left"
+        android:text="@string/name"
+        />
+    <TextView
+        android:id="@+id/tv_gender"
+       style="@style/toolbarLayout"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:background="@color/textColorWhite"
+        android:text="@string/gender"
+        android:gravity="left"
+
+        />
+    <TextView
+        android:id="@+id/tv_online"
+        android:layout_marginTop="10dp"
+        android:background="@color/onlinebg"
+        style="@style/toolbarLayout"
+        android:textColor="@color/textColorWhite"
+        android:text="@string/online"
+        />
+
+</LinearLayout>

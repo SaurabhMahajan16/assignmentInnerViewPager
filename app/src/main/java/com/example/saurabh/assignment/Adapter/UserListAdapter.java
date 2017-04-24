@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.saurabh.assignment.ItemTypeActivity;
+import com.example.saurabh.assignment.Activity.ItemTypeActivity;
 import com.example.saurabh.assignment.Model.UserInfo;
 import com.example.saurabh.assignment.R;
 
@@ -19,12 +19,15 @@ import java.util.List;
 /**
  * Recycler View adapter holds and binds views
  */
-
 public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHolder> {
 
     private List<UserInfo> userInfoList;
     private Context mContext;
 
+    /**
+     * @param context      to get context of application in which it is used
+     * @param userInfoList object of array type
+     */
     public UserListAdapter(final Context context, final List<UserInfo> userInfoList) {
         this.userInfoList = userInfoList;
         mContext = context;
@@ -48,11 +51,17 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
 
     }
 
+    /**
+     * @return size of a list
+     */
     @Override
     public int getItemCount() {
         return userInfoList.size();
     }
 
+    /**
+     * inner class of Viewholder
+     */
     public final class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView tvName, tvGender;
@@ -71,7 +80,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
         }
 
         @Override
-        public void onClick(View v) {
+        public void onClick(final View v) {
             final int position = getAdapterPosition();
             if (position != RecyclerView.NO_POSITION) {
                 final UserInfo user = userInfoList.get(position);
@@ -80,7 +89,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
                 alertDialogBuilder
                         .setMessage("You selected ")
                         .setPositiveButton("View", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
+                            public void onClick(final DialogInterface dialog, final int which) {
                                 Intent intent = new Intent(mContext, ItemTypeActivity.class);
                                 // add data to intent extras
                                 intent.putExtra("key", user);
@@ -89,11 +98,11 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
                             }
                         }).setCancelable(true);
 
-            alertDialogBuilder.create();
+                alertDialogBuilder.create();
 
-            alertDialogBuilder.show();
+                alertDialogBuilder.show();
 
+            }
         }
     }
-}
 }

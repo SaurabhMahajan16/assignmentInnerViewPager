@@ -3,15 +3,10 @@ package com.example.saurabh.assignment.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-
 /**
- * Created by saurabh on 20/4/17.
+ * Model class for user which contains user real life properties
  */
-
-public class UserInfo implements Parcelable{
-    private String mName, mGender;
-    
+public class UserInfo implements Parcelable {
     /**
      * this is a constructor of parcelable class and creater object
      */
@@ -24,18 +19,31 @@ public class UserInfo implements Parcelable{
             return new UserInfo[size];
         }
     };
+    private String mName, mGender;
 
     /**
-     * construcotor which is called when object is created
-     * @param mName name of person
+     * constructor which is called when object is created
+     *
+     * @param mName   contains name
+     * @param mGender contains gender
      */
-    public UserInfo(final String mName,final String mGender) {
+
+    public UserInfo(final String mName, final String mGender) {
         this.mName = mName;
         this.mGender = mGender;
     }
 
     /**
+     * @param in parcel type copies value of name to read string
+     */
+    public UserInfo(final Parcel in) {
+        mName = in.readString();
+        mGender = in.readString();
+    }
+
+    /**
      * function to get name of a person
+     *
      * @return name of person
      */
     public String getName() {
@@ -43,29 +51,27 @@ public class UserInfo implements Parcelable{
     }
 
     /**
-     *
      * @return gender of type string
      */
-    public String getGender(){
+    public String getGender() {
         return mGender;
     }
+
+    /**
+     * @return contents
+     */
     @Override
     public int describeContents() {
         return 0;
     }
 
+    /**
+     * @param dest  destination object
+     * @param flags flag
+     */
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
+    public void writeToParcel(final Parcel dest, final int flags) {
         dest.writeString(mName);
         dest.writeString(mGender);
-    }
-
-    /**
-     *
-     * @param in parcel type copies value of name to read string
-     */
-    public UserInfo(final Parcel in){
-        mName = in.readString();
-        mGender = in.readString();
     }
 }

@@ -28,25 +28,24 @@ public class ItemTypeFragment extends Fragment implements Constants {
         changeButtonColor(Constants.PAST);
         mbtnPast.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 viewPager.setCurrentItem(Constants.PAST);
                 changeButtonColor(Constants.PAST);
             }
         });
         mbtnUpcoming.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 viewPager.setCurrentItem(Constants.UPCOMING);
                 changeButtonColor(Constants.UPCOMING);
             }
         });
         viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
-            public Fragment getItem(int position) {
-                if(position == Constants.PAST){
+            public Fragment getItem(final int position) {
+                if (position == Constants.PAST) {
                     return InnerViewpagerFragment.getObjectInstance(Constants.PAST);
-                }
-                else{
+                } else {
                     return InnerViewpagerFragment.getObjectInstance(Constants.UPCOMING);
                 }
             }
@@ -67,7 +66,7 @@ public class ItemTypeFragment extends Fragment implements Constants {
      *
      * @param v of view type
      */
-    public void init(View v) {
+    public void init(final View v) {
         viewPager = (ViewPager) v.findViewById(R.id.vp_swipe);
         mbtnPast = (Button) v.findViewById(R.id.btn_past);
         mbtnUpcoming = (Button) v.findViewById(R.id.btn_upcoming);
@@ -75,8 +74,10 @@ public class ItemTypeFragment extends Fragment implements Constants {
 
     /**
      * use change color of button
+     *
+     * @param change of int type
      */
-    public void changeButtonColor(int change) {
+    public void changeButtonColor(final int change) {
         if (change == 0) {
             mbtnPast.setBackgroundResource(R.color.bgBlue);
             mbtnUpcoming.setBackgroundResource(R.color.colorPrimaryDark);
@@ -86,4 +87,10 @@ public class ItemTypeFragment extends Fragment implements Constants {
         }
     }
 
+    /**
+     * method to avoid check style error in interface
+     */
+    public void methodInterface() {
+
+    }
 }
